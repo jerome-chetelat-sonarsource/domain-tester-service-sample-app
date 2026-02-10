@@ -34,6 +34,7 @@ public class MainController {
   @RequestMapping(method=RequestMethod.POST, value="/test-domain", consumes="application/json")
   public ResponseEntity<String> testDomain(@RequestBody DomainTestRequest request) {
     log.info("Testing domain " + request.domainName);
+    log.info("Testing another domain " + request.domainName);
     try {
       String result = domainTestService.testDomain(request.domainName);
       return new ResponseEntity<>(result, HttpStatus.OK);
